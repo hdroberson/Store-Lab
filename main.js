@@ -250,7 +250,7 @@ var container = $("#catalog")
         // create html syntax for the item
         var element = ' <div class="item"> ' + 
         ' <img src="/images/' + item.image + '"> ' +
-        ' <label class="lblCode">' + item.code + '</label> ' +
+        //' <label class="lblCode">' + item.code + '</label> ' +
         ' <label class="lblTitle">' + item.title + '</label> ' +
         ' <label class="lblPrice">' + item.price + '</label> ' +
         ' </div>';
