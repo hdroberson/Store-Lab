@@ -5,8 +5,7 @@ body {
 }
 
 #adminPage {
-    background-color:   rgb(216, 210, 203);
-    border: 1px solid rgb(230, 241, 245);    
+    background-color:  rgb(108, 187, 247);   
     margin-bottom: 60px;
 }
 
@@ -14,6 +13,7 @@ h1 {
     text-align: center;
     color: black;
     margin-bottom: 50px;
+    padding: 5px;
 }
 
 .capture-form {
@@ -46,7 +46,7 @@ h1 {
 
 .item {
     display: inline-block;
-    max-width: 200px;
+    max-width: 225px;
     max-height: 300px;
     border: 1px solid #999;
     padding: 10px;
@@ -70,4 +70,21 @@ h1 {
     display: block;
     font-size: 1rem;
 }
+
+li a:hover {
+    border-left: solid 3px lightgray;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+footer {
+    background-color: dimgrey;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    max-width: auto;
+    margin-top: 60px;
+}
+
 

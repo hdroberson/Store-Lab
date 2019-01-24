@@ -92,8 +92,7 @@ function register() {
     var cat = $("#selCat").val();
 
     var item = new Item(code, title, price, image, cat);
-    console.log(item);
-
+    
     var jsonOb = JSON.stringify(item);
 
     $.ajax({
@@ -141,7 +140,8 @@ function displayItem(item) {
         '  <img src="/images/' + item.image + '">  ' +
         '  <label class="lblCode">' + item.code + '</label>  ' +
         '  <label class="lblTitle">' + item.title + '</label> ' +
-        ' </div>';
+        '  <label class="lblPrice">' + item.price + '</label> ' +
+        '  </div>';
 
     $(container).append(element);
 }
@@ -221,42 +221,24 @@ function add2Cart(code) {
             item = DB[i];
             break;
         }
-    }
+    };
     
     // found the item the user wants to add
     // is on item variable
     var priceVal = parseFloat(item.price); // convert string to float number
-    var newTotal = cart.total + parseFloat; // mat operation of sum
+    var newTotal = cart.total + priceVal; // mat operation of sum
     cart.total = newTotal;
     cart.items.push(item);
+    
 
     // display the new total
     $("#total").text('$ ' + newTotal.toFixed(2));
-
+    
     // update the local storage 
     // set = save
     // we can only save string in the local storage
     var cartAsString = JSON.stringify(cart);
     storage.setItem('cart', cartAsString); // save in local storage
-}
-
-function showCatalog() {
-var container = $("#catalog")
-
-    // crate a html element for each items on the DB list
-    for (var i = 0; i < DB.length; i++) {
-        var item = DB[i];
-
-        // create html syntax for the item
-        var element = ' <div class="item"> ' + 
-        ' <img src="/images/' + item.image + '"> ' +
-        //' <label class="lblCode">' + item.code + '</label> ' +
-        ' <label class="lblTitle">' + item.title + '</label> ' +
-        ' <label class="lblPrice">' + item.price + '</label> ' +
-        ' </div>';
-    
-    $(container).append(element);
-    }
 }
 
 // test the comunication with the server
